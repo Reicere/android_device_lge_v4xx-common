@@ -1,3 +1,6 @@
 allow sensors qmuxd:unix_stream_socket connectto;
 allow sensors qmuxd_socket:dir { write add_name search };
 allow sensors qmuxd_socket:sock_file { create setattr write };
+
+# Access /data/misc/sensors/debug and /data/system/sensors/settings
+allow sensors self:capability { dac_override dac_read_search };
