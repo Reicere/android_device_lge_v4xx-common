@@ -192,10 +192,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
 
-# Radio
-PRODUCT_PACKAGES += \
-    libxml2
-
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.v4xx \
@@ -210,6 +206,10 @@ PRODUCT_PACKAGES += \
     init.zetaw.usb.rc \
     init.zetaw.usb.sh \
     ueventd.v4xx.rc
+
+# RIL symbols
+PRODUCT_PACKAGES += \
+    liblge
 
 # Thermal
 PRODUCT_COPY_FILES += \

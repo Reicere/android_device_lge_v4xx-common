@@ -195,7 +195,7 @@ bin/qmuxd
 bin/radish
 bin/rmt_storage
 lib/libmdmdetect.so
-lib/librmnetctl.so
+lib/libril.so
 lib/libuicc.so
 lib/libvss_common_core.so
 lib/libvss_common_idl.so
@@ -217,7 +217,6 @@ vendor/lib/libdsnetutils.so
 vendor/lib/libdsucsd.so
 vendor/lib/libdsutils.so
 vendor/lib/libidl.so
-vendor/lib/liblqe.so
 vendor/lib/libnetmgr.so
 vendor/lib/libperipheral_client.so
 vendor/lib/libqcci_legacy.so

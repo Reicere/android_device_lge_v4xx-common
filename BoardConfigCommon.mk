@@ -123,9 +123,6 @@ TARGET_RECOVERY_FSTAB := device/lge/v4xx-common/rootdir/etc/fstab.v4xx
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 
-# RIL
-TARGET_RIL_VARIANT := caf
-
 # SDClang
 TARGET_USE_SDCLANG := true
 
