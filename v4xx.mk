@@ -147,6 +147,10 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_PACKAGES += \
 #    keystore.msm8226
 
+# libqc-opt
+PRODUCT_PACKAGES += \
+    libhw_utext
+
 # Lights
 PRODUCT_PACKAGES += \
     lights.msm8226
