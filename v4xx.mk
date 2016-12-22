@@ -190,9 +190,7 @@ PRODUCT_PACKAGES += \
 
 # Qualcomm
 PRODUCT_PACKAGES += \
-    libcnefeatureconfig \
-    librmnetctl \
-    libxml2
+    libcnefeatureconfig
 
 # Radio
 PRODUCT_PACKAGES += \
