@@ -176,6 +176,9 @@ vendor/lib/libbmc050.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
 
+# STLport
+vendor/lib/libstlport.so
+
 # Time services
 vendor/lib/libtime_genoff.so
 
