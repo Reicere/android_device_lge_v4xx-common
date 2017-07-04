@@ -32,7 +32,7 @@ on early-init
 	mount debugfs debugfs /sys/kernel/debug
 
 on init
-    export LD_SHIM_LIBS /system/vendor/lib/libqomx_jpegenc.so|libboringssl-compat.so:/system/vendor/lib/libOpenCL.so|libboringssl-compat.so:/system/vendor/lib/libwvm.so|libshims_wvm.so:/system/vendor/lib/libqc-opt.so|libhw_utext.so
+    export LD_SHIM_LIBS /system/vendor/lib/libqomx_jpegenc.so|libboringssl-compat.so:/system/vendor/lib/libOpenCL.so|libboringssl-compat.so:/system/vendor/lib/libwvm.so|libshims_wvm.so
 
 
     # Set permissions for persist partition
