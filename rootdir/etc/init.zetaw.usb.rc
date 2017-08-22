@@ -45,7 +45,7 @@ on property:sys.usb.provisioned=1
 
 on charger
     stop bootlogo
-    mount_all fstab.v4xx
+    mount_all fstab.e7wifi
     start adbd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 1004
@@ -56,7 +56,7 @@ on charger
     write /sys/class/android_usb/android0/functions charge_only
     write /sys/class/android_usb/android0/enable 1
 
-# LGE USB compositions	
+# LGE USB compositions
 # boot
 on property:sys.usb.config=boot
     write /sys/class/android_usb/android0/enable 0

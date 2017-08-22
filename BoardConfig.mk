@@ -14,9 +14,11 @@
 # limitations under the License.
 
 # inherit from the proprietary version
--include vendor/lge/v4xx-common/BoardConfigVendor.mk
+-include vendor/lge/v400/BoardConfigVendor.mk
 
-LOCAL_PATH := device/lge/v4xx-common
+LOCAL_PATH := device/lge/v400
+
+TARGET_OTA_ASSERT_DEVICE := v400,e7,e7wifi
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8226
@@ -32,7 +34,7 @@ TARGET_CPU_VARIANT := krait
 # Bluetooth
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/v4xx-common/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/v400/bluetooth
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8226
@@ -41,7 +43,7 @@ TARGET_NO_BOOTLOADER := true
 # Kernel
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
-BOARD_KERNEL_CMDLINE := console=none user_debug=31 msm_rtb.filter=0x37 androidboot.hardware=v4xx
+BOARD_KERNEL_CMDLINE := console=none user_debug=31 msm_rtb.filter=0x37 androidboot.hardware=e7wifi
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
@@ -49,6 +51,7 @@ BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02000000 -
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
 TARGET_KERNEL_SOURCE := kernel/lge/v4xx
+TARGET_KERNEL_CONFIG := cyanogen_e7wifi_defconfig
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -119,7 +122,7 @@ BOARD_NO_SECURE_DISCARD := true
 BOARD_RECOVERY_SWIPE := true
 BOARD_SUPPRESS_EMMC_WIPE := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
-TARGET_RECOVERY_FSTAB := device/lge/v4xx-common/rootdir/etc/fstab.v4xx
+TARGET_RECOVERY_FSTAB := device/lge/v400/rootdir/etc/fstab.e7wifi
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 
@@ -133,7 +136,7 @@ TARGET_USE_SDCLANG := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/lge/v4xx-common/sepolicy
+BOARD_SEPOLICY_DIRS += device/lge/v400/sepolicy
 
 # Time services
 # TODO (needs libtime_genoff)

@@ -17,7 +17,7 @@
 
 set -e
 
-DEVICE_COMMON=v4xx-common
+DEVICE=v400
 VENDOR=lge
 
 # Load extract_utils and do some sanity checks
@@ -32,18 +32,6 @@ if [ ! -f "$HELPER" ]; then
     exit 1
 fi
 . "$HELPER"
-
-# Initialize the helper for common device
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" true
-
-# Copyright headers and common guards
-write_headers "v400 v410 v480 v490"
-
-# The common blobs
-write_makefiles "$MY_DIR"/proprietary-files.txt
-
-# We are done with common
-write_footers
 
 # Initialize the helper for device
 setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"

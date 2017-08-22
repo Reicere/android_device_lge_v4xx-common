@@ -16,7 +16,7 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-$(call inherit-product-if-exists, vendor/lge/v4xx-common/v4xx-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/lge/v400/v400-vendor.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -71,7 +71,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio
 PRODUCT_COPY_FILES += \
-    device/lge/v4xx-common/configs/mixer_paths.xml:system/etc/mixer_paths.xml
+    device/lge/v400/configs/mixer_paths.xml:system/etc/mixer_paths.xml
 
 PRODUCT_PACKAGES += \
     audiod \
@@ -113,10 +113,6 @@ PRODUCT_PACKAGES += \
     memtrack.msm8226 \
     liboverlay
 
-# Gello
-PRODUCT_PACKAGES += \
-    Gello
-
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8226
@@ -139,35 +135,19 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/qwerty.idc:system/usr/idc/qwerty.idc \
     $(LOCAL_PATH)/idc/touch_dev.idc:system/usr/idc/touch_dev.idc
 
-# Keystore
-#PRODUCT_PACKAGES += \
-#    keystore.msm8226
-
 # Lights
 PRODUCT_PACKAGES += \
     lights.msm8226
 
 # Media
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml
+    $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
-
-# NFC
-# TODO
-#PRODUCT_PACKAGES += \
-#    com.android.nfc_extras \
-#    NfcNci \
-#    nfc_nci.pn54x.default \
-#    Tag
-#
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-#    $(LOCAL_PATH)/configs/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
-#    $(LOCAL_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml
 
 # Offmode Charging
 PRODUCT_PACKAGES += \
@@ -204,8 +184,8 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    fstab.v4xx \
-    init.v4xx.rc \
+    fstab.e7wifi \
+    init.e7wifi.rc \
     init.lge.rc \
     init.zetaw.bt_vendor.rc \
     init.zetaw.class_core.sh \
@@ -215,7 +195,7 @@ PRODUCT_PACKAGES += \
     init.zetaw.syspart_fixup.sh \
     init.zetaw.usb.rc \
     init.zetaw.usb.sh \
-    ueventd.v4xx.rc
+    ueventd.e7wifi.rc
 
 # Thermal
 PRODUCT_COPY_FILES += \
@@ -232,10 +212,10 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
-    device/lge/v4xx-common/wcnss/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-    device/lge/v4xx-common/wcnss/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    device/lge/v4xx-common/wcnss/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
-    device/lge/v4xx-common/wcnss/p2p_supplicant.conf:system/etc/wifi/p2p_supplicant.conf \
-    device/lge/v4xx-common/wcnss/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-    device/lge/v4xx-common/wcnss/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    device/lge/v4xx-common/wcnss/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+    device/lge/v400/wcnss/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    device/lge/v400/wcnss/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    device/lge/v400/wcnss/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
+    device/lge/v400/wcnss/p2p_supplicant.conf:system/etc/wifi/p2p_supplicant.conf \
+    device/lge/v400/wcnss/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+    device/lge/v400/wcnss/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    device/lge/v400/wcnss/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf

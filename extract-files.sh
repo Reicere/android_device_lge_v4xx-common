@@ -17,7 +17,7 @@
 
 set -e
 
-DEVICE_COMMON=v4xx-common
+DEVICE=v400
 VENDOR=lge
 
 # Load extractutils and do some sanity checks
@@ -49,14 +49,9 @@ else
     fi
 fi
 
-# Initialize the helper for common device
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" true
-
-extract "$MY_DIR"/proprietary-files.txt "$SRC"
-
 # Initialize the helper for device
 setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
 
-extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC"
+extract "$MY_DIR"/proprietary-files.txt "$SRC"
 
 "$MY_DIR"/setup-makefiles.sh
