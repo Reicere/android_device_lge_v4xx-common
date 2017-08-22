@@ -231,6 +231,10 @@ PRODUCT_PACKAGES += \
     init.zetaw.usb.sh \
     ueventd.v4xx.rc
 
+# USB HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service
+
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl
