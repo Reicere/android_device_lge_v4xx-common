@@ -37,7 +37,6 @@ lib/libchromatix_hi543_snapshot.so
 lib/libmm-qcamera.so
 lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
-vendor/lib/libmm-imscamera.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegehw.so
 vendor/lib/libmm-hdcpmgr.so
@@ -73,24 +72,24 @@ vendor/lib/libqomx_jpegenc.so
 
 # DRM
 bin/qseecomd
-lib/drm/libdrmwvmplugin.so
+lib/drm/libfwdlockengine.so
+lib/libdrmfs.so
+lib/libdrmtime.so
+lib/libQSEEComAPI.so
+lib/librpmb.so
+lib/libssd.so
 vendor/firmware/widevine.b00
 vendor/firmware/widevine.b01
 vendor/firmware/widevine.b02
 vendor/firmware/widevine.b03
 vendor/firmware/widevine.mdt
+vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/libDivxDrm.so
-vendor/lib/libQSEEComAPI.so
 vendor/lib/libSHIMDivxDrm.so
-vendor/lib/libWVStreamControlAPI_L1.so
-vendor/lib/libdrmdecrypt.so
-vendor/lib/libdrmdiag.so
-vendor/lib/libdrmfs.so
-vendor/lib/libdrmtime.so
-vendor/lib/librpmb.so
-vendor/lib/libssd.so
+vendor/lib/libWVphoneAPI.so
+vendor/lib/libWVStreamControlAPI_L3.so
 vendor/lib/libmmosal.so
-vendor/lib/libwvdrm_L1.so
+vendor/lib/libwvdrm_L3.so
 vendor/lib/libwvm.so
 vendor/lib/mediadrm/libdrmclearkeyplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
@@ -111,20 +110,21 @@ vendor/lib/libquipc_os_api.so
 vendor/lib/libulp2.so
 
 # Graphics
-etc/firmware/a330_pfp.fw
-etc/firmware/a330_pm4.fw
+vendor/firmware/a330_pfp.fw
+vendor/firmware/a330_pm4.fw
 vendor/lib/egl/eglsubAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so
+vendor/lib/libbccQTI.so
 vendor/lib/libC2D2.so
 vendor/lib/libCB.so
 vendor/lib/libOpenCL.so
 vendor/lib/libRSDriver_adreno.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libc2d30-a3xx.so
-vendor/lib/libc2d30-a4xx.so
+vendor/lib/libc2d30.so
 vendor/lib/libgsl.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/librs_adreno.so
@@ -167,8 +167,9 @@ bin/netmgrd
 bin/qmuxd
 bin/radish
 bin/rmt_storage
+etc/data/dsi_config.xml
+etc/data/netmgr_config.xml
 lib/libmdmdetect.so
-lib/libril.so
 lib/libuicc.so
 lib/libvss_common_core.so
 lib/libvss_common_idl.so
@@ -187,7 +188,9 @@ vendor/lib/libconfigdb.so
 vendor/lib/libdiag.so
 vendor/lib/libdsi_netctrl.so
 vendor/lib/libdsucsd.so
+vendor/lib/libdsutils.so
 vendor/lib/libidl.so
+vendor/lib/liblqe.so
 vendor/lib/libnetmgr.so
 vendor/lib/libperipheral_client.so
 vendor/lib/libqcci_legacy.so
@@ -195,6 +198,7 @@ vendor/lib/libqdi.so
 vendor/lib/libqdp.so
 vendor/lib/libqmi.so
 vendor/lib/libqmi_cci.so
+vendor/lib/libqmi_client_helper.so
 vendor/lib/libqmi_client_qmux.so
 vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so
