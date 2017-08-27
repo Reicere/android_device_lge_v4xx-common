@@ -248,7 +248,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     hostapd \
-    hostapd_default.conf \
     libwcnss_qmi \
     libwpa_client \
     wcnss_service \
