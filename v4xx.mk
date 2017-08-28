@@ -217,9 +217,16 @@ PRODUCT_PACKAGES += \
     init.zetaw.usb.sh \
     ueventd.v4xx.rc
 
+ifeq ($(filter v410 v480 v490, $(TARGET_DEVICE)),)
 # Thermal
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine-8226.conf:system/etc/thermal-engine-8226.conf
+    $(LOCAL_PATH)/configs/thermal-engine-8226-v4xx.conf:system/etc/thermal-engine-8226.conf
+endif
+ifeq ($(filter v400, $(TARGET_DEVICE)),)
+# Thermal
+PRODUCT_COPY_FILES += \
+		$(LOCAL_PATH)/configs/thermal-engine-8226-v400.conf:system/etc/thermal-engine-8226.conf
+endif
 
 # Wifi
 PRODUCT_PACKAGES += \
