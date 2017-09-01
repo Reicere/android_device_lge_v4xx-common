@@ -150,9 +150,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/touch_dev.idc:system/usr/idc/touch_dev.idc
 
 # Keystore
-#PRODUCT_PACKAGES += \
-#    android.hardware.keymaster@3.0-impl \
-#    keystore.msm8226
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-impl
 
 # Lights
 PRODUCT_PACKAGES += \
