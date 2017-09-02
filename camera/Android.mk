@@ -5,7 +5,6 @@ LOCAL_SRC_FILES := \
     CameraWrapper.cpp
 
 LOCAL_C_INCLUDES := \
-    framework/native/include \
     system/media/camera/include
 
 LOCAL_SHARED_LIBRARIES := \
@@ -16,10 +15,11 @@ LOCAL_SHARED_LIBRARIES := \
     libhidltransport \
     libsensor \
     libutils \
-    android.hidl.token@1.0-utils
+    android.hidl.token@1.0-utils \
+    android.hardware.graphics.bufferqueue@1.0
 
 LOCAL_STATIC_LIBRARIES := \
-    libarect
+    libarect libbase
 
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_MODULE := camera.$(TARGET_BOARD_PLATFORM)
