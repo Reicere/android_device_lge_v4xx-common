@@ -609,7 +609,7 @@ static void lazy_init_modules() {
  * reported by the wrapper.
  */
 static void fix_sensor_flags(int version, sensor_t& sensor) {
-    if (version <= SENSORS_DEVICE_API_VERSION_1_0) {
+    if (version < SENSORS_DEVICE_API_VERSION_1_3) {
         if (sensor.type == SENSOR_TYPE_PROXIMITY ||
                 sensor.type == SENSOR_TYPE_TILT_DETECTOR) {
             int new_flags = SENSOR_FLAG_WAKE_UP | SENSOR_FLAG_ON_CHANGE_MODE;
