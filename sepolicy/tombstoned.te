@@ -1,0 +1,3 @@
+#============= tombstoned ==============
+allow tombstoned sysfs:file { getattr open read };
+

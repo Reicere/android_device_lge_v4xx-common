@@ -1,3 +1,4 @@
+#============= timekeep ==============
 type timekeep, domain;
 type timekeep_exec, exec_type, file_type;
 
@@ -9,6 +10,7 @@ allow timekeep rtc_sysfs:dir search;
 allow timekeep rtc_sysfs:file r_file_perms;
 allow timekeep time_data_file:file rw_file_perms;
 allow timekeep timekeep_prop:file r_file_perms;
+allow timekeep sysfs:file { getattr open read };
 
 allow system_app rtc_sysfs:dir search;
 allow system_app rtc_sysfs:file r_file_perms;

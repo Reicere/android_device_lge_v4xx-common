@@ -1,0 +1,2 @@
+#============= surfaceflinger ==============
+#allow surfaceflinger hal_graphics_allocator_hwservice:hwservice_manager add;

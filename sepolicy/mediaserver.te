@@ -1,5 +1,12 @@
+#============= mediaserver ==============
 allow mediaserver media_prop:property_service set;
 allow mediaserver persist_drm_file:dir search;
 allow mediaserver persist_drm_file:file r_file_perms;
 allow mediaserver sysfs:file write;
 allow mediaserver system_file:file execmod;
+allow mediaserver hal_camera_hwservice:hwservice_manager find;
+allow mediaserver system_data_file:sock_file write;
+allow mediaserver thermal-engine:unix_stream_socket connectto;
+allow mediaserver thermal_socket:sock_file write;
+allow mediaserver camera_prop:file { open read };
+

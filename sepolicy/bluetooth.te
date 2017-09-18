@@ -1,0 +1,2 @@
+#============= bluetooth ==============
+#allow bluetooth self:capability2 0x8;

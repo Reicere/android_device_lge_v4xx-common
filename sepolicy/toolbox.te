@@ -1,0 +1,8 @@
+#============= toolbox ==============
+allow toolbox init:fifo_file { getattr write };
+allow toolbox init:unix_stream_socket connectto;
+allow toolbox property_socket:sock_file write;
+allow toolbox sensors_persist_file:dir { getattr search };
+allow toolbox sensors_persist_file:file { getattr setattr };
+allow toolbox sysfs:file { getattr open read };
+allow toolbox self:capability chown;

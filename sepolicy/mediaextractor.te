@@ -1,0 +1,3 @@
+#============= mediaextractor ==============
+allow mediaextractor sysfs:file { getattr open read };
+allow mediaextractor system_server:fifo_file write;

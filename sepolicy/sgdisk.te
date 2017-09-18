@@ -1,0 +1,2 @@
+#============= sgdisk ==============
+allow sgdisk sysfs:file { getattr open read };
