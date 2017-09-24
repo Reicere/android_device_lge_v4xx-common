@@ -609,20 +609,83 @@ static void lazy_init_modules() {
  * reported by the wrapper.
  */
 static void fix_sensor_flags(int version, sensor_t& sensor) {
-    if (version <= SENSORS_DEVICE_API_VERSION_1_0) {
-        if (sensor.type == SENSOR_TYPE_PROXIMITY ||
-                sensor.type == SENSOR_TYPE_TILT_DETECTOR) {
-            int new_flags = SENSOR_FLAG_WAKE_UP | SENSOR_FLAG_ON_CHANGE_MODE;
-            ALOGV("Changing flags of handle=%d from %x to %x",
-                    sensor.handle, sensor.flags, new_flags);
-            sensor.flags = new_flags;
+    if (version <= SENSORS_DEVICE_API_VERSION_1_3) {
+      ALOGI("Sensors device API: %d", version);
+        if (sensor.type == SENSOR_TYPE_GRAVITY) {
+          int new_flags = SENSOR_FLAG_CONTINUOUS_MODE;
+          ALOGI("Changing flags of handle=%d from %x to %x",
+                  sensor.handle, sensor.flags, new_flags);
+          sensor.flags = new_flags;
         }
-	    
-        if (sensor.type == SENSOR_TYPE_LIGHT) {
-            int new_flags = SENSOR_FLAG_ON_CHANGE_MODE;
-            ALOGV("Changing flags of handle=%d from %x to %x",
-                    sensor.handle, sensor.flags, new_flags);
-            sensor.flags = new_flags;
+        else if (sensor.type == SENSOR_TYPE_LINEAR_ACCELERATION) {
+          int new_flags = SENSOR_FLAG_CONTINUOUS_MODE;
+          ALOGI("Changing flags of handle=%d from %x to %x",
+                  sensor.handle, sensor.flags, new_flags);
+          sensor.flags = new_flags;
+        }
+        else if (sensor.type == SENSOR_TYPE_ROTATION_VECTOR) {
+          int new_flags = SENSOR_FLAG_CONTINUOUS_MODE;
+          ALOGI("Changing flags of handle=%d from %x to %x",
+                  sensor.handle, sensor.flags, new_flags);
+          sensor.flags = new_flags;
+        }
+        else if (sensor.type == SENSOR_TYPE_STEP_DETECTOR) {
+          int new_flags = SENSOR_FLAG_SPECIAL_REPORTING_MODE;
+          ALOGI("Changing flags of handle=%d from %x to %x",
+                  sensor.handle, sensor.flags, new_flags);
+          sensor.flags = new_flags;
+        }
+        else if (sensor.type == SENSOR_TYPE_STEP_COUNTER) {
+          int new_flags = SENSOR_FLAG_ON_CHANGE_MODE;
+          ALOGI("Changing flags of handle=%d from %x to %x",
+                  sensor.handle, sensor.flags, new_flags);
+          sensor.flags = new_flags;
+        }
+        else if (sensor.type == SENSOR_TYPE_SIGNIFICANT_MOTION) {
+          int new_flags = SENSOR_FLAG_ONE_SHOT_MODE | SENSOR_FLAG_WAKE_UP;
+          ALOGI("Changing flags of handle=%d from %x to %x",
+                  sensor.handle, sensor.flags, new_flags);
+          sensor.flags = new_flags;
+        }
+        else if (sensor.type == SENSOR_TYPE_GEOMAGNETIC_ROTATION_VECTOR) {
+          int new_flags = SENSOR_FLAG_CONTINUOUS_MODE;
+          ALOGI("Changing flags of handle=%d from %x to %x",
+                  sensor.handle, sensor.flags, new_flags);
+          sensor.flags = new_flags;
+        }
+        else if (sensor.type == SENSOR_TYPE_ORIENTATION) {
+          int new_flags = SENSOR_FLAG_CONTINUOUS_MODE;
+          ALOGI("Changing flags of handle=%d from %x to %x",
+                  sensor.handle, sensor.flags, new_flags);
+          sensor.flags = new_flags;
+        }
+        else if (sensor.type == SENSOR_TYPE_TILT_DETECTOR) {
+          int new_flags = SENSOR_FLAG_ONE_SHOT_MODE | SENSOR_FLAG_WAKE_UP;
+          ALOGI("Changing flags of handle=%d from %x to %x",
+                  sensor.handle, sensor.flags, new_flags);
+          sensor.flags = new_flags;
+        }
+        else if (sensor.type == SENSOR_TYPE_ABSOLUTE_MOTION_DETECTOR) { //33171006
+          int new_flags = SENSOR_FLAG_ON_CHANGE_MODE;
+          ALOGI("Changing flags of handle=%d from %x to %x",
+                  sensor.handle, sensor.flags, new_flags);
+          sensor.flags = new_flags;
+        }
+        else if (sensor.type == SENSOR_TYPE_RELATIVE_MOTION) { //33171007
+          int new_flags = SENSOR_FLAG_ON_CHANGE_MODE;
+          ALOGI("Changing flags of handle=%d from %x to %x",
+                  sensor.handle, sensor.flags, new_flags);
+          sensor.flags = new_flags;
+        }
+        else if (sensor.type == SENSOR_TYPE_MOTION_ACCEL) { //499898101
+          int new_flags = SENSOR_FLAG_ON_CHANGE_MODE;
+          ALOGI("Changing flags of handle=%d from %x to %x",
+                  sensor.handle, sensor.flags, new_flags);
+          sensor.flags = new_flags;
+        }
+        else {
+          ALOGI("Unknown sensor handle: %d type: %d flag: %d",
+                  sensor.handle, sensor.type, sensor.flags);
         }
     }
 }
@@ -780,4 +843,3 @@ static int open_sensors(const struct hw_module_t* hw_module, const char* name,
     ALOGV("...open_sensors end");
     return 0;
 }
-

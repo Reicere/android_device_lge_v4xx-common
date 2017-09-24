@@ -26,4 +26,14 @@ static const char* DEPRECATED_MULTI_HAL_CONFIG_FILE_PATH = "/system/etc/sensors/
 
 struct sensors_module_t *get_multi_hal_module_info(void);
 
+#define SENSOR_STRING_TYPE_ABSOLUTE_MOTION_DETECTOR   "android.sensor.absolute_motion_detector"
+#define SENSOR_STRING_TYPE_RELATIVE_MOTION            "android.sensor.relative_motion"
+#define SENSOR_STRING_TYPE_MOTION_ACCEL               "android.sensor.motion_accel"
+
+enum {
+  SENSOR_TYPE_ABSOLUTE_MOTION_DETECTOR = 33171006,
+  SENSOR_TYPE_RELATIVE_MOTION = 33171007,
+  SENSOR_TYPE_MOTION_ACCEL = 499898101,
+};
+
 #endif // HARDWARE_LIBHARDWARE_MODULES_SENSORS_MULTIHAL_H_
