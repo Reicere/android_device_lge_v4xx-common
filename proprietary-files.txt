@@ -171,10 +171,13 @@ vendor/lib/libqc-opt.so
 # Sensors
 bin/irsc_util
 bin/sensors.qcom
+vendor/lib/hw/activity_recognition.msm8226.so
 vendor/lib/hw/sensors.msm8226.so:vendor/lib/sensors.v4xx.so
-vendor/lib/libbmc050.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
+vendor/lib/libsensor_test.so
+vendor/lib/libsensor_thresh.so
+vendor/lib/libsensor_user_cal.so
 
 # STLport
 vendor/lib/libstlport.so
