@@ -151,3 +151,19 @@ TARGET_USES_QCOM_WCNSS_QMI := true
 WIFI_DRIVER_FW_PATH_AP := "ap"
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+
+ifeq ($(WITH_TWRP),true)
+# TWRP-Specific
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/recovery/root/twrp.fstab:recovery/root/etc/twrp.fstab
+TW_DEVICE_VERSION=1
+RECOVERY_VARIANT := twrp
+TW_THEME := portrait_hdpi
+BOARD_SUPPRESS_SECURE_ERASE := true
+RECOVERY_SDCARD_ON_DATA := true
+TW_NO_REBOOT_BOOTLOADER := true
+TW_INCLUDE_CRYPTO := true
+TW_NO_USB_STORAGE := true
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_IGNORE_MAJOR_AXIS_0 := true
+endif
